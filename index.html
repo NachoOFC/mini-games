@@ -4,43 +4,43 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mini Games</title>
+    <link rel="icon" type="image/png" href="./jugando-videojuegos.png" />
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
     <main class="app">
       <header class="header">
         <h1>Mini Games</h1>
-        <p class="subtitle">Elegí un juego y dale play</p>
+        <p class="subtitle">Elegí un juego para empezar</p>
       </header>
 
-      <section class="panel" aria-label="Selector de juego">
-        <div class="controls">
-          <label class="label" for="game">Juego</label>
-          <select id="game" class="select" aria-label="Seleccionar juego">
-            <option value="gato">Gato (tatetí)</option>
-            <option value="ahorcado">Ahorcado</option>
-          </select>
-        </div>
+      <section class="games" aria-label="Juegos">
+        <a class="card" href="./gato/" aria-label="Jugar Gato (tatetí)">
+          <div class="thumb" data-game="gato" aria-hidden="true"></div>
+          <div class="cardBody">
+            <h2 class="cardTitle">Gato (tatetí)</h2>
+            <p class="cardDesc">Clásico 3 en línea para 2 jugadores.</p>
+            <div class="cardActions">
+              <span class="btn">Jugar</span>
+            </div>
+          </div>
+        </a>
 
-        <div class="actions">
-          <a class="btn" id="open" href="./gato/" target="_self">Abrir</a>
-          <a class="btn secondary" id="openNew" href="./gato/" target="_blank" rel="noreferrer">Nueva pestaña</a>
-        </div>
+        <a class="card" href="./ahorcado/" aria-label="Jugar Ahorcado">
+          <div class="thumb" data-game="ahorcado" aria-hidden="true"></div>
+          <div class="cardBody">
+            <h2 class="cardTitle">Ahorcado</h2>
+            <p class="cardDesc">Adiviná la palabra antes de quedarte sin intentos.</p>
+            <div class="cardActions">
+              <span class="btn">Jugar</span>
+            </div>
+          </div>
+        </a>
       </section>
-
-      <section class="frameWrap" aria-label="Juego">
-        <iframe
-          id="frame"
-          title="Juego"
-          src="./gato/"
-          referrerpolicy="no-referrer"
-        ></iframe>
 
       <footer class="footer">
         <small>Hecho con HTML, CSS y JS</small>
       </footer>
     </main>
-
-    <script src="./script.js"></script>
   </body>
 </html>

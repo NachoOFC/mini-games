@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ahorcado</title>
+    <link rel="icon" type="image/png" href="./ahorcado.png" />
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
@@ -21,7 +22,37 @@
       <section class="game">
         <div class="card">
           <div class="top">
-            <pre class="gallows" id="gallows" aria-hidden="true"></pre>
+            <div class="gallows" aria-hidden="true">
+              <svg
+                class="gallowsSvg"
+                id="gallowsSvg"
+                viewBox="0 0 240 200"
+                role="img"
+                aria-label="Ahorcado"
+              >
+                <!-- Horca -->
+                <g class="stand">
+                  <path class="standStroke" d="M30 180 H210" />
+                  <path class="standStroke" d="M70 180 V30" />
+                  <path class="standStroke" d="M70 30 H160" />
+                  <path class="standStroke" d="M160 30 V50" />
+                  <path class="standStroke" d="M70 55 L95 30" />
+                </g>
+
+                <!-- Cuerda -->
+                <path class="rope" d="M160 50 V70" />
+
+                <!-- Monito (se revela por errores) -->
+                <g class="person">
+                  <circle class="personStroke" data-step="1" cx="160" cy="86" r="16" />
+                  <path class="personStroke" data-step="2" d="M160 102 V140" />
+                  <path class="personStroke" data-step="3" d="M160 112 L142 126" />
+                  <path class="personStroke" data-step="4" d="M160 112 L178 126" />
+                  <path class="personStroke" data-step="5" d="M160 140 L146 164" />
+                  <path class="personStroke" data-step="6" d="M160 140 L174 164" />
+                </g>
+              </svg>
+            </div>
             <div class="meta">
               <div class="hint" id="hint"></div>
               <div class="used" id="used" aria-label="Letras usadas"></div>

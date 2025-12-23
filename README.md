@@ -4,7 +4,7 @@ Jueguitos clásicos con **HTML + CSS + JS**.
 
 ## Juegos
 
-- Menú (portal): `./index.html`
+- Menú (portal tipo FRIV): `./index.html`
 - Gato (tatetí): `./gato/`
 - Ahorcado: `./ahorcado/`
 

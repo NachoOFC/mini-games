@@ -56,6 +56,91 @@ body {
   flex-wrap: wrap;
 }
 
+.games {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+}
+
+.card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  display: grid;
+  grid-template-rows: 120px 1fr;
+}
+
+.card:hover {
+  border-color: rgba(122, 162, 255, 0.6);
+}
+
+.card:focus-visible {
+  outline: 2px solid rgba(122, 162, 255, 0.85);
+  outline-offset: 2px;
+}
+
+.thumb {
+  background:
+    linear-gradient(180deg, rgba(15, 24, 48, 0.55), rgba(11, 18, 32, 0.85)),
+    radial-gradient(600px 200px at 20% 20%, rgba(122, 162, 255, 0.25), transparent),
+    radial-gradient(600px 200px at 80% 30%, rgba(255, 107, 107, 0.18), transparent),
+    linear-gradient(180deg, rgba(15, 24, 48, 0.9), rgba(11, 18, 32, 0.9));
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.thumb[data-game='gato'] {
+  background:
+    linear-gradient(180deg, rgba(15, 24, 48, 0.35), rgba(11, 18, 32, 0.85)),
+    url('./gato/gato.png'),
+    radial-gradient(600px 200px at 20% 20%, rgba(122, 162, 255, 0.25), transparent),
+    radial-gradient(600px 200px at 80% 40%, rgba(99, 230, 190, 0.16), transparent),
+    linear-gradient(180deg, rgba(15, 24, 48, 0.9), rgba(11, 18, 32, 0.9));
+  background-size: cover, contain, cover, cover, cover;
+  background-position: center, center, center, center, center;
+  background-repeat: no-repeat;
+}
+
+.thumb[data-game='ahorcado'] {
+  background:
+    linear-gradient(180deg, rgba(15, 24, 48, 0.35), rgba(11, 18, 32, 0.85)),
+    url('./ahorcado/ahorcado.png'),
+    radial-gradient(600px 200px at 20% 20%, rgba(255, 107, 107, 0.18), transparent),
+    radial-gradient(600px 200px at 80% 40%, rgba(122, 162, 255, 0.18), transparent),
+    linear-gradient(180deg, rgba(15, 24, 48, 0.9), rgba(11, 18, 32, 0.9));
+  background-size: cover, contain, cover, cover, cover;
+  background-position: center, center, center, center, center;
+  background-repeat: no-repeat;
+}
+
+.cardBody {
+  padding: 14px;
+  display: grid;
+  gap: 8px;
+}
+
+.cardTitle {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.2;
+}
+
+.cardDesc {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.cardActions {
+  display: flex;
+  gap: 10px;
+  margin-top: 6px;
+}
+
 .controls {
   display: grid;
   gap: 6px;
@@ -104,21 +189,6 @@ body {
 
 .btn.secondary {
   color: var(--muted);
-}
-
-.frameWrap {
-  background: var(--panel);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  overflow: hidden;
-}
-
-iframe {
-  width: 100%;
-  height: min(78vh, 760px);
-  border: 0;
-  display: block;
-  background: var(--bg);
 }
 
 .footer {

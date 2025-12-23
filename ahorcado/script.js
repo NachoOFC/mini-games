@@ -18,7 +18,7 @@ const WORDS = [
 const el = {
   status: document.getElementById('status'),
   reset: document.getElementById('reset'),
-  gallows: document.getElementById('gallows'),
+  gallowsSvg: document.getElementById('gallowsSvg'),
   hint: document.getElementById('hint'),
   used: document.getElementById('used'),
   word: document.getElementById('word'),
@@ -44,74 +44,19 @@ function isPlayableLetter(char) {
   return char.length === 1 && ALPHABET.includes(char);
 }
 
-function getGallows(wrongCount) {
-  const frames = [
-    [
-      ' +---+',
-      ' |   |',
-      '     |',
-      '     |',
-      '     |',
-      '     |',
-      '======',
-    ],
-    [
-      ' +---+',
-      ' |   |',
-      ' O   |',
-      '     |',
-      '     |',
-      '     |',
-      '======',
-    ],
-    [
-      ' +---+',
-      ' |   |',
-      ' O   |',
-      ' |   |',
-      '     |',
-      '     |',
-      '======',
-    ],
-    [
-      ' +---+',
-      ' |   |',
-      ' O   |',
-      '/|   |',
-      '     |',
-      '     |',
-      '======',
-    ],
-    [
-      ' +---+',
-      ' |   |',
-      ' O   |',
-      '/|\\  |',
-      '     |',
-      '     |',
-      '======',
-    ],
-    [
-      ' +---+',
-      ' |   |',
-      ' O   |',
-      '/|\\  |',
-      '/    |',
-      '     |',
-      '======',
-    ],
-    [
-      ' +---+',
-      ' |   |',
-      ' O   |',
-      '/|\\  |',
-      '/ \\  |',
-      '     |',
-      '======',
-    ],
-  ];
+function renderGallows() {
+  if (!el.gallowsSvg) return;
 
-  return frames[Math.max(0, Math.min(frames.length - 1, wrongCount))].join('\n');
+  const wrongCount = state.wrong.size;
+  const parts = el.gallowsSvg.querySelectorAll('[data-step]');
+
+  for (const node of parts) {
+    if (!(node instanceof SVGElement)) continue;
+    const stepAttr = node.getAttribute('data-step');
+    const step = stepAttr ? Number(stepAttr) : Number.NaN;
+    const visible = Number.isFinite(step) && wrongCount >= step;
+    node.classList.toggle('is-visible', visible);
+  }
 }
 
 function createState() {
@@ -185,10 +130,6 @@ function renderUsed() {
   used.sort((a, b) => ALPHABET.indexOf(a) - ALPHABET.indexOf(b));
 
   el.used.textContent = used.length ? `Usadas: ${used.join(' ')}` : 'Usadas: —';
-}
-
-function renderGallows() {
-  el.gallows.textContent = getGallows(state.wrong.size);
 }
 
 function renderKeyboard() {

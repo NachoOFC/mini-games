@@ -4,6 +4,7 @@
   --text: #e7eefc;
   --muted: #a8b3cc;
   --accent: #7aa2ff;
+  --danger: #ff6b6b;
   --border: rgba(231, 238, 252, 0.14);
   --surface: #0f1830;
 }
@@ -101,16 +102,51 @@ body {
 }
 
 .gallows {
-  margin: 0;
   padding: 12px;
   border-radius: 12px;
   border: 1px solid var(--border);
   background: var(--surface);
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
-    'Courier New', monospace;
-  font-size: 13px;
-  line-height: 1.2;
-  white-space: pre;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.gallowsSvg {
+  width: 100%;
+  height: auto;
+  max-width: 220px;
+  display: block;
+}
+
+.standStroke {
+  fill: none;
+  stroke: rgba(231, 238, 252, 0.85);
+  stroke-width: 6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.rope {
+  fill: none;
+  stroke: rgba(122, 162, 255, 0.9);
+  stroke-width: 5;
+  stroke-linecap: round;
+}
+
+.personStroke {
+  fill: none;
+  stroke: rgba(255, 107, 107, 0.95);
+  stroke-width: 6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: 0;
+  transform-origin: 160px 110px;
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.personStroke.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .meta {

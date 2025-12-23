@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ahorcado</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="header">
+        <h1>Ahorcado</h1>
+        <p class="subtitle">Adiviná la palabra antes de quedarte sin vidas</p>
+      </header>
+
+      <section class="panel" aria-live="polite">
+        <div class="status" id="status">Cargando…</div>
+        <button class="btn" id="reset" type="button">Reiniciar</button>
+      </section>
+
+      <section class="game">
+        <div class="card">
+          <div class="top">
+            <pre class="gallows" id="gallows" aria-hidden="true"></pre>
+            <div class="meta">
+              <div class="hint" id="hint"></div>
+              <div class="used" id="used" aria-label="Letras usadas"></div>
+            </div>
+          </div>
+
+          <div class="word" id="word" aria-label="Palabra"></div>
+
+          <div class="keyboard" id="keyboard" aria-label="Teclado">
+            <!-- botones se generan por JS -->
+          </div>
+
+          <p class="helper" id="helper">
+            Tip: también podés usar el teclado. Letras A-Z y Ñ.
+          </p>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <small>Hecho con HTML, CSS y JS</small>
+      </footer>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

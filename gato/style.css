@@ -1,0 +1,148 @@
+:root {
+  --bg: #0b1220;
+  --panel: #111a2e;
+  --text: #e7eefc;
+  --muted: #a8b3cc;
+  --accent: #7aa2ff;
+  --danger: #ff6b6b;
+  --cell: #0f1830;
+  --cellHover: #152248;
+  --border: rgba(231, 238, 252, 0.14);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans,
+    sans-serif;
+  background: radial-gradient(1000px 600px at 20% 10%, rgba(122, 162, 255, 0.22), transparent),
+    radial-gradient(900px 600px at 90% 10%, rgba(255, 107, 107, 0.12), transparent), var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.app {
+  width: min(520px, 100%);
+  display: grid;
+  gap: 16px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 28px;
+  letter-spacing: 0.4px;
+  line-height: 1;
+  padding: 0;
+}
+
+.subtitle {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  padding: 16px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.status {
+  font-weight: 600;
+}
+
+.btn {
+  appearance: none;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text);
+  padding: 10px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.btn:hover {
+  border-color: rgba(122, 162, 255, 0.6);
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.board {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 14px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+/* En tu HTML las celdas están dentro de <div role="row">.
+   Esto hace que esos wrappers no rompan el grid visual. */
+.board > div {
+  display: contents;
+}
+
+.cell {
+  height: clamp(84px, 18vw, 130px);
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: var(--cell);
+  color: var(--text);
+  font-size: clamp(34px, 7vw, 54px);
+  font-weight: 800;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: background 0.2s;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.cell:hover {
+  background: var(--cellHover);
+}
+
+.cell:focus-visible {
+  outline: 2px solid rgba(122, 162, 255, 0.75);
+  outline-offset: -2px;
+}
+
+.cell:disabled {
+  cursor: not-allowed;
+  opacity: 0.92;
+}
+
+.cell.x {
+  color: var(--accent);
+}
+
+.cell.o {
+  color: var(--danger);
+}
+
+.cell.win {
+  outline: 2px solid rgba(122, 162, 255, 0.75);
+  outline-offset: 2px;
+}
+
+.footer {
+  color: var(--muted);
+  text-align: center;
+  font-size: 13px;
+  margin-top: 8px;
+}

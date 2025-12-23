@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mini Games</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="header">
+        <h1>Mini Games</h1>
+        <p class="subtitle">Elegí un juego y dale play</p>
+      </header>
+
+      <section class="panel" aria-label="Selector de juego">
+        <div class="controls">
+          <label class="label" for="game">Juego</label>
+          <select id="game" class="select" aria-label="Seleccionar juego">
+            <option value="gato">Gato (tatetí)</option>
+            <option value="ahorcado">Ahorcado</option>
+          </select>
+        </div>
+
+        <div class="actions">
+          <a class="btn" id="open" href="./gato/" target="_self">Abrir</a>
+          <a class="btn secondary" id="openNew" href="./gato/" target="_blank" rel="noreferrer">Nueva pestaña</a>
+        </div>
+      </section>
+
+      <section class="frameWrap" aria-label="Juego">
+        <iframe
+          id="frame"
+          title="Juego"
+          src="./gato/"
+          referrerpolicy="no-referrer"
+        ></iframe>
+
+      <footer class="footer">
+        <small>Hecho con HTML, CSS y JS</small>
+      </footer>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

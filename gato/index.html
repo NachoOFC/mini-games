@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>El Gato (Tatetí)</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="header">
+        <h1>El Gato</h1>
+        <p class="subtitle">Turnos locales: X vs O</p>
+      </header>
+
+      <section class="panel" aria-live="polite">
+        <div class="status" id="status">Turno de: X</div>
+        <button class="btn" id="reset" type="button">Reiniciar</button>
+      </section>
+
+      <section class="board" id="board" role="grid" aria-label="Tablero del gato">
+        <div role="row">
+          <button class="cell" type="button" role="gridcell" aria-label="Celda 1" data-index="0"></button>
+          <button class="cell" type="button" role="gridcell" aria-label="Celda 2" data-index="1"></button>
+          <button class="cell" type="button" role="gridcell" aria-label="Celda 3" data-index="2"></button>
+        </div>
+        <div role="row">
+          <button class="cell" type="button" role="gridcell" aria-label="Celda 4" data-index="3"></button>
+          <button class="cell" type="button" role="gridcell" aria-label="Celda 5" data-index="4"></button>
+          <button class="cell" type="button" role="gridcell" aria-label="Celda 6" data-index="5"></button>
+        </div>
+        <div role="row">
+          <button class="cell" type="button" role="gridcell" aria-label="Celda 7" data-index="6"></button>
+          <button class="cell" type="button" role="gridcell" aria-label="Celda 8" data-index="7"></button>
+          <button class="cell" type="button" role="gridcell" aria-label="Celda 9" data-index="8"></button>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <small>Hecho con HTML, CSS y JS</small>
+      </footer>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

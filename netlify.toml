@@ -1,0 +1,9 @@
+[build]
+  publish = "."
+  command = ""
+
+# Opcional: evita que una URL mal escrita termine en blanco.
+[[redirects]]
+  from = "/*"
+  to = "/404.html"
+  status = 404

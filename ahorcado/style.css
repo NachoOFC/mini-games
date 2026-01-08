@@ -32,6 +32,38 @@ body {
   gap: 16px;
 }
 
+.header-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.back-button {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--muted);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.back-button:hover {
+  background: var(--surface);
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateX(-2px);
+}
+
+.back-button:active {
+  transform: translateX(-2px) scale(0.95);
+}
+
 .header h1 {
   margin: 0;
   font-size: 28px;

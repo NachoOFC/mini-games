@@ -18,10 +18,20 @@
           </a>
           <div>
             <h1>El Gato</h1>
-            <p class="subtitle">Turnos locales: X vs O</p>
+            <p class="subtitle" id="subtitle">Turnos locales: X vs O</p>
           </div>
         </div>
       </header>
+
+      <section class="mode-selector">
+        <button class="mode-btn active" id="modeLocal" type="button">Local (X vs O)</button>
+        <button class="mode-btn" id="modeIA" type="button">vs IA</button>
+      </section>
+
+      <section class="difficulty-selector" id="difficultySelector" style="display: none;">
+        <button class="difficulty-btn active" id="difficultyNormal" type="button">Normal</button>
+        <button class="difficulty-btn" id="difficultyImpossible" type="button">Imposible</button>
+      </section>
 
       <section class="panel" aria-live="polite">
         <div class="status" id="status">Turno de: X</div>

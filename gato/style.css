@@ -79,6 +79,74 @@ body {
   font-size: 14px;
 }
 
+.mode-selector {
+  display: flex;
+  gap: 8px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  padding: 8px;
+  border-radius: 12px;
+}
+
+.mode-btn {
+  flex: 1;
+  appearance: none;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 500;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.mode-btn:hover {
+  background: var(--cellHover);
+  color: var(--text);
+}
+
+.mode-btn.active {
+  background: var(--accent);
+  color: var(--bg);
+  border-color: var(--accent);
+}
+
+.difficulty-selector {
+  display: flex;
+  gap: 8px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  padding: 8px;
+  border-radius: 12px;
+}
+
+.difficulty-btn {
+  flex: 1;
+  appearance: none;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 500;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.difficulty-btn:hover {
+  background: var(--cellHover);
+  color: var(--text);
+}
+
+.difficulty-btn.active {
+  background: var(--danger);
+  color: white;
+  border-color: var(--danger);
+}
+
 .panel {
   background: var(--panel);
   border: 1px solid var(--border);

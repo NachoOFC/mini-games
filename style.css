@@ -117,6 +117,18 @@ body {
   background-repeat: no-repeat;
 }
 
+.thumb[data-game='snake'] {
+  background:
+    linear-gradient(180deg, rgba(15, 24, 48, 0.35), rgba(11, 18, 32, 0.85)),
+    url('./snake/snake.png'),
+    radial-gradient(600px 200px at 20% 20%, rgba(0, 255, 0, 0.18), transparent),
+    radial-gradient(600px 200px at 80% 40%, rgba(255, 0, 0, 0.15), transparent),
+    linear-gradient(180deg, rgba(15, 24, 48, 0.9), rgba(11, 18, 32, 0.9));
+  background-size: cover, contain, cover, cover, cover;
+  background-position: center, center, center, center, center;
+  background-repeat: no-repeat;
+}
+
 .cardBody {
   padding: 14px;
   display: grid;

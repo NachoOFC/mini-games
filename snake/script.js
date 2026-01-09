@@ -4,7 +4,7 @@ const ctx = canvas.getContext('2d');
 
 // Configuración del juego
 const GRID_SIZE = 20;
-const CANVAS_SIZE = 600;
+const CANVAS_SIZE = 500;
 canvas.width = CANVAS_SIZE;
 canvas.height = CANVAS_SIZE;
 

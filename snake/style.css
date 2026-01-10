@@ -34,12 +34,18 @@ body {
     gap: 10px;
 }
 
+.header-content {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
 h1 {
     color: var(--text);
     font-size: 2em;
     margin: 0;
     font-weight: 600;
-    text-align: center;
+    line-height: 1;
 }
 
 .game-info {
@@ -209,9 +215,7 @@ h1 {
 }
 
 .back-button {
-    position: fixed;
-    top: 24px;
-    left: 24px;
+    flex-shrink: 0;
     width: 36px;
     height: 36px;
     display: flex;
@@ -223,7 +227,6 @@ h1 {
     color: var(--text);
     text-decoration: none;
     transition: all 0.15s ease;
-    font-size: 1.25rem;
 }
 
 .back-button:hover {

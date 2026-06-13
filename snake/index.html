@@ -1,67 +1,81 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Snake - Juego Clásico</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Snake</title>
     <link rel="icon" type="image/png" href="./snake.png" />
     <link rel="stylesheet" href="../shared.css" />
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <main class="app">
-        <header class="header">
-            <div class="header-content">
-                <a href="../index.html" class="back-button" aria-label="Volver al menú principal">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M19 12H5M12 19l-7-7 7-7"/>
-                    </svg>
-                </a>
-                <div>
-                    <h1>Snake</h1>
-                    <p class="subtitle">Come la comida y crece sin chocarte</p>
-                </div>
-            </div>
-        </header>
-        
-        <div class="game-info">
-            <div class="score-container">
-                <span class="label">Puntuación:</span>
-                <span id="score">0</span>
-            </div>
-            <div class="high-score-container">
-                <span class="label">Record:</span>
-                <span id="highScore">0</span>
-            </div>
+      <header class="header">
+        <div class="header-content">
+          <a href="../index.html" class="back-button" aria-label="Volver al menú principal">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M19 12H5M12 19l-7-7 7-7"/>
+            </svg>
+          </a>
+          <div>
+            <h1>Snake</h1>
+            <p class="subtitle">Crece sin chocarte</p>
+          </div>
         </div>
+      </header>
 
-        <canvas id="gameCanvas"></canvas>
-
-        <div class="controls">
-            <button id="startBtn" class="btn">Iniciar Juego</button>
-            <button id="pauseBtn" class="btn" disabled>Pausar</button>
-            <button id="resetBtn" class="btn">Reiniciar</button>
+      <div class="score-bar">
+        <div class="score-block">
+          <span class="score-label">Puntos</span>
+          <span class="score-value" id="score">0</span>
         </div>
-
-        <div class="instructions">
-            <h3>Instrucciones:</h3>
-            <ul>
-                <li>Usa las flechas del teclado para mover la serpiente</li>
-                <li>Come la comida roja para crecer y ganar puntos</li>
-                <li>No choques con las paredes ni contigo mismo</li>
-                <li>Presiona ESPACIO para pausar/reanudar</li>
-            </ul>
+        <div class="score-block">
+          <span class="score-label">Record</span>
+          <span class="score-value" id="highScore">0</span>
         </div>
+      </div>
 
-        <div id="gameOver" class="game-over hidden">
-            <div class="game-over-content">
-                <h2>¡Game Over!</h2>
-                <p>Tu puntuación: <span id="finalScore">0</span></p>
-                <button id="playAgainBtn" class="btn">Jugar de Nuevo</button>
-            </div>
+      <div class="canvas-wrap">
+        <canvas id="gameCanvas" width="500" height="500"></canvas>
+        <div class="pause-overlay hidden" id="pauseOverlay">
+          <span class="pause-text">PAUSADO</span>
         </div>
+      </div>
+
+      <div class="controls-row">
+        <button class="btn" id="startBtn">Comenzar</button>
+        <button class="btn" id="pauseBtn" disabled>Pausa</button>
+        <button class="btn secondary" id="resetBtn">Reiniciar</button>
+      </div>
+
+      <div class="dpad" id="dpad">
+        <button class="dpad-btn" data-dir="up" aria-label="Arriba">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
+        </button>
+        <button class="dpad-btn" data-dir="left" aria-label="Izquierda">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <div class="dpad-center"></div>
+        <button class="dpad-btn" data-dir="right" aria-label="Derecha">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+        <button class="dpad-btn" data-dir="down" aria-label="Abajo">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+      </div>
+
+      <p class="tip">Flechas del teclado o botones para moverte · <kbd>Espacio</kbd> para pausar</p>
+
+      <div id="gameOver" class="game-over hidden">
+        <div class="game-over-content">
+          <h2>Game Over</h2>
+          <p class="go-score">Puntuación: <span id="finalScore">0</span></p>
+          <p class="go-hs" id="goHighScore">¡Nuevo récord!</p>
+          <button id="playAgainBtn" class="btn">Jugar de nuevo</button>
+        </div>
+      </div>
     </main>
 
     <script src="script.js"></script>
-</body>
+  </body>
 </html>

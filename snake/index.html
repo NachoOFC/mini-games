@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Snake - Juego Clásico</title>
     <link rel="icon" type="image/png" href="./snake.png" />
+    <link rel="stylesheet" href="../shared.css" />
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
+    <main class="app">
         <header class="header">
             <div class="header-content">
                 <a href="../index.html" class="back-button" aria-label="Volver al menú principal">
@@ -17,7 +18,8 @@
                     </svg>
                 </a>
                 <div>
-                    <h1>🐍 Snake</h1>
+                    <h1>Snake</h1>
+                    <p class="subtitle">Come la comida y crece sin chocarte</p>
                 </div>
             </div>
         </header>
@@ -58,7 +60,7 @@
                 <button id="playAgainBtn" class="btn">Jugar de Nuevo</button>
             </div>
         </div>
-    </div>
+    </main>
 
     <script src="script.js"></script>
 </body>

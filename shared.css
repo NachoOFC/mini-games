@@ -1,0 +1,140 @@
+:root {
+	--bg: #0b1220;
+	--panel: #111a2e;
+	--text: #e7eefc;
+	--muted: #a8b3cc;
+	--accent: #7aa2ff;
+	--danger: #ff6b6b;
+	--border: rgba(231, 238, 252, 0.14);
+	--surface: #0f1830;
+	--cell: #0f1830;
+	--cell-hover: #152248;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans,
+		sans-serif;
+	background:
+		radial-gradient(1000px 600px at 20% 10%, rgba(122, 162, 255, 0.22), transparent),
+		radial-gradient(900px 600px at 90% 10%, rgba(255, 107, 107, 0.12), transparent),
+		var(--bg);
+	color: var(--text);
+	min-height: 100vh;
+	display: grid;
+	place-items: center;
+	padding: 24px;
+}
+
+/* ─── Header ─── */
+
+.header-content {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+}
+
+.back-button {
+	flex-shrink: 0;
+	width: 36px;
+	height: 36px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: var(--panel);
+	border: 1px solid var(--border);
+	border-radius: 8px;
+	color: var(--muted);
+	text-decoration: none;
+	transition: all 0.2s ease;
+}
+
+.back-button:hover {
+	background: var(--surface);
+	border-color: var(--accent);
+	color: var(--accent);
+	transform: translateX(-2px);
+}
+
+.back-button:active {
+	transform: translateX(-2px) scale(0.95);
+}
+
+.header h1 {
+	margin: 0;
+	font-size: 28px;
+	letter-spacing: 0.4px;
+	line-height: 1;
+}
+
+.subtitle {
+	margin: 8px 0 0;
+	color: var(--muted);
+	font-size: 14px;
+}
+
+/* ─── Panel ─── */
+
+.panel {
+	background: var(--panel);
+	border: 1px solid var(--border);
+	padding: 16px;
+	border-radius: 12px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 12px;
+}
+
+.status {
+	font-weight: 600;
+}
+
+/* ─── Botones ─── */
+
+.btn {
+	appearance: none;
+	border: 1px solid var(--border);
+	background: transparent;
+	color: var(--text);
+	padding: 10px 16px;
+	border-radius: 10px;
+	cursor: pointer;
+	font-size: 14px;
+	text-decoration: none;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	white-space: nowrap;
+}
+
+.btn:hover {
+	border-color: rgba(122, 162, 255, 0.6);
+}
+
+.btn:active {
+	transform: translateY(1px);
+}
+
+.btn:disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
+}
+
+.btn.secondary {
+	color: var(--muted);
+}
+
+/* ─── Footer ─── */
+
+.footer {
+	color: var(--muted);
+	text-align: center;
+	font-size: 13px;
+	margin-top: 8px;
+}

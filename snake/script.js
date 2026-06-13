@@ -16,6 +16,7 @@ const goScreen = $('gameOver');
 const finalScoreEl = $('finalScore');
 const goHSEl = $('goHighScore');
 const playAgainBtn = $('playAgainBtn');
+const goCloseBtn = $('goClose');
 const pauseOverlay = $('pauseOverlay');
 
 let snake, direction, nextDir, food, score, highScore, speed, phase;
@@ -297,6 +298,12 @@ resetBtn.addEventListener('click', () => {
 	animId = requestAnimationFrame(loop);
 });
 playAgainBtn.addEventListener('click', startGame);
+goCloseBtn.addEventListener('click', () => {
+	goScreen.classList.add('hidden');
+	phase = 'idle';
+	startBtn.disabled = false;
+	animId = requestAnimationFrame(loop);
+});
 
 document.addEventListener('keydown', (e) => {
 	if (['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight', ' '].includes(e.key)) e.preventDefault();

@@ -8,6 +8,9 @@ Jueguitos clásicos con **HTML + CSS + JS**.
 - Gato (tatetí): `./gato/`
 - Ahorcado: `./ahorcado/`
 - Snake: `./snake/`
+- Memorama: `./memorama/`
+- 2048: `./2048/`
+- Tiro al Blanco: `./tiro-al-blanco/`
 
 ## Cómo ejecutar
 

@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2048</title>
+    <link rel="icon" type="image/png" href="./2048.png" />
+    <link rel="stylesheet" href="../shared.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="header">
+        <div class="header-content">
+          <a href="../index.html" class="back-button" aria-label="Volver al menú principal">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M19 12H5M12 19l-7-7 7-7"/>
+            </svg>
+          </a>
+          <div>
+            <h1>2048</h1>
+            <p class="subtitle">Sumá hasta llegar a 2048</p>
+          </div>
+        </div>
+      </header>
+
+      <div class="score-bar">
+        <div class="score-block">
+          <span class="score-label">Puntos</span>
+          <span class="score-value" id="score">0</span>
+        </div>
+        <div class="score-block">
+          <span class="score-label">Mejor</span>
+          <span class="score-value" id="best">0</span>
+        </div>
+      </div>
+
+      <div class="board-wrap">
+        <div class="board" id="board"></div>
+        <div id="gameOverScreen" class="overlay hidden">
+          <div class="overlay-content">
+            <h2>Game Over</h2>
+            <p class="go-score">Puntaje: <span id="finalScore">0</span></p>
+            <button id="retryBtn" class="btn">Intentar de nuevo</button>
+          </div>
+        </div>
+        <div id="winScreen" class="overlay hidden">
+          <div class="overlay-content">
+            <h2 class="win-title">¡2048!</h2>
+            <p class="go-score">Puntaje: <span id="winScore">0</span></p>
+            <button id="continueBtn" class="btn secondary">Seguir jugando</button>
+            <button id="newGameWinBtn" class="btn">Nuevo juego</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="controls-row">
+        <button class="btn" id="newGameBtn">Nuevo juego</button>
+      </div>
+
+      <p class="tip">Flechas del teclado para mover · Deslizá en mobile</p>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

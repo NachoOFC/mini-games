@@ -82,6 +82,42 @@
 	background-repeat: no-repeat;
 }
 
+.thumb[data-game='memorama'] {
+	background:
+		linear-gradient(180deg, rgba(15, 24, 48, 0.35), rgba(11, 18, 32, 0.85)),
+		url('./memorama/memorama.png'),
+		radial-gradient(600px 200px at 20% 20%, rgba(122, 162, 255, 0.25), transparent),
+		radial-gradient(600px 200px at 80% 40%, rgba(255, 217, 61, 0.16), transparent),
+		linear-gradient(180deg, rgba(15, 24, 48, 0.9), rgba(11, 18, 32, 0.9));
+	background-size: cover, contain, cover, cover, cover;
+	background-position: center, center, center, center, center;
+	background-repeat: no-repeat;
+}
+
+.thumb[data-game='2048'] {
+	background:
+		linear-gradient(180deg, rgba(15, 24, 48, 0.35), rgba(11, 18, 32, 0.85)),
+		url('./2048/2048.png'),
+		radial-gradient(600px 200px at 20% 20%, rgba(238, 228, 218, 0.2), transparent),
+		radial-gradient(600px 200px at 80% 40%, rgba(237, 194, 46, 0.2), transparent),
+		linear-gradient(180deg, rgba(15, 24, 48, 0.9), rgba(11, 18, 32, 0.9));
+	background-size: cover, contain, cover, cover, cover;
+	background-position: center, center, center, center, center;
+	background-repeat: no-repeat;
+}
+
+.thumb[data-game='tiro'] {
+	background:
+		linear-gradient(180deg, rgba(15, 24, 48, 0.35), rgba(11, 18, 32, 0.85)),
+		url('./tiro-al-blanco/tiro-al-blanco.png'),
+		radial-gradient(600px 200px at 20% 20%, rgba(255, 107, 107, 0.25), transparent),
+		radial-gradient(600px 200px at 80% 40%, rgba(255, 255, 255, 0.12), transparent),
+		linear-gradient(180deg, rgba(15, 24, 48, 0.9), rgba(11, 18, 32, 0.9));
+	background-size: cover, contain, cover, cover, cover;
+	background-position: center, center, center, center, center;
+	background-repeat: no-repeat;
+}
+
 .cardBody {
 	padding: 14px;
 	display: grid;

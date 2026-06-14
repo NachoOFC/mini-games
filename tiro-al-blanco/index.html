@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tiro al Blanco</title>
+    <link rel="icon" type="image/png" href="./tiro-al-blanco.png" />
+    <link rel="stylesheet" href="../shared.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="header">
+        <div class="header-content">
+          <a href="../index.html" class="back-button" aria-label="Volver al menú principal">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M19 12H5M12 19l-7-7 7-7"/>
+            </svg>
+          </a>
+          <div>
+            <h1>Tiro al Blanco</h1>
+            <p class="subtitle">Apuntá y dispará al blanco</p>
+          </div>
+        </div>
+      </header>
+
+      <div class="score-bar">
+        <div class="score-block">
+          <span class="score-label">Puntaje</span>
+          <span class="score-value" id="score">0</span>
+        </div>
+        <div class="score-block">
+          <span class="score-label">Tiempo</span>
+          <span class="score-value" id="timer">60</span>
+        </div>
+      </div>
+
+      <div class="canvas-wrap">
+        <canvas id="gameCanvas" width="500" height="500"></canvas>
+      </div>
+
+      <div class="controls-row">
+        <button class="btn" id="startBtn">Comenzar</button>
+        <button class="btn secondary" id="resetBtn">Reiniciar</button>
+      </div>
+
+      <p class="tip">Hacé click en los blancos para disparar · Apuntá al centro para más puntos</p>
+
+      <div id="gameOver" class="game-over hidden">
+        <div class="game-over-content">
+          <button class="go-close" id="goClose" aria-label="Cerrar">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+          </button>
+          <h2>¡Tiempo!</h2>
+          <p class="go-score">Puntuación: <span id="finalScore">0</span></p>
+          <p class="go-hs" id="goHighScore"></p>
+          <button id="playAgainBtn" class="btn">Jugar de nuevo</button>
+        </div>
+      </div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

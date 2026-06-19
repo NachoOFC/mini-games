@@ -13,6 +13,21 @@ const WORDS = [
   { word: 'BACKEND', hint: 'Servidor y lógica' },
   { word: 'DISEÑO', hint: 'UI/UX, estilos y composición' },
   { word: 'AÑO NUEVO', hint: 'Dos palabras con espacio' },
+  { word: 'WEB SCRAPING', hint: 'Extraer datos de sitios web' },
+  { word: 'CRAWLER', hint: 'Robot que recorre la web indexando' },
+  { word: 'SELENIUM', hint: 'Automatización de navegadores' },
+  { word: 'BEAUTIFULSOUP', hint: 'Biblioteca Python para parsear HTML' },
+  { word: 'PUPPETEER', hint: 'Controlar Chrome sin interfaz gráfica' },
+  { word: 'SCRAPY', hint: 'Framework de scraping en Python' },
+  { word: 'XPATH', hint: 'Lenguaje para navegar elementos HTML/XML' },
+  { word: 'MODULARIDAD', hint: 'Dividir el código en componentes independientes' },
+  { word: 'ENCAPSULACION', hint: 'Ocultar detalles internos de implementación' },
+  { word: 'MODULO', hint: 'Componente independiente y reutilizable' },
+  { word: 'ABSTRACTION', hint: 'Ocultar complejidad, mostrar lo esencial' },
+  { word: 'REUTILIZACION', hint: 'Usar código existente en nuevos contextos' },
+  { word: 'COMPONENTE', hint: 'Parte reutilizable de un sistema' },
+  { word: 'INTERFAZ', hint: 'Contrato entre componentes del sistema' },
+  { word: 'ARQUITECTURA', hint: 'Estructura fundamental de un sistema' },
 ];
 
 const el = {

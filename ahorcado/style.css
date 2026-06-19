@@ -1,271 +1,157 @@
-:root {
-  --bg: #0b1220;
-  --panel: #111a2e;
-  --text: #e7eefc;
-  --muted: #a8b3cc;
-  --accent: #7aa2ff;
-  --danger: #ff6b6b;
-  --border: rgba(231, 238, 252, 0.14);
-  --surface: #0f1830;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans,
-    sans-serif;
-  background: radial-gradient(1000px 600px at 20% 10%, rgba(122, 162, 255, 0.22), transparent),
-    radial-gradient(900px 600px at 90% 10%, rgba(255, 107, 107, 0.12), transparent), var(--bg);
-  color: var(--text);
-  min-height: 100vh;
-  display: grid;
-  place-items: center;
-  padding: 24px;
-}
-
 .app {
-  width: min(520px, 100%);
-  display: grid;
-  gap: 16px;
-}
-
-.header-content {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.back-button {
-  flex-shrink: 0;
-  width: 36px;
-  height: 36px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--panel);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  color: var(--muted);
-  text-decoration: none;
-  transition: all 0.2s ease;
-}
-
-.back-button:hover {
-  background: var(--surface);
-  border-color: var(--accent);
-  color: var(--accent);
-  transform: translateX(-2px);
-}
-
-.back-button:active {
-  transform: translateX(-2px) scale(0.95);
-}
-
-.header h1 {
-  margin: 0;
-  font-size: 28px;
-  letter-spacing: 0.4px;
-  line-height: 1;
-}
-
-.subtitle {
-  margin: 8px 0 0;
-  color: var(--muted);
-  font-size: 14px;
-}
-
-.panel {
-  background: var(--panel);
-  border: 1px solid var(--border);
-  padding: 16px;
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-}
-
-.status {
-  font-weight: 600;
-}
-
-.btn {
-  appearance: none;
-  border: 1px solid var(--border);
-  background: transparent;
-  color: var(--text);
-  padding: 10px 16px;
-  border-radius: 10px;
-  cursor: pointer;
-  font-size: 14px;
-}
-
-.btn:hover {
-  border-color: rgba(122, 162, 255, 0.6);
-}
-
-.btn:active {
-  transform: translateY(1px);
+	width: min(520px, 100%);
+	display: grid;
+	gap: 16px;
 }
 
 .game .card {
-  background: var(--panel);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 16px;
-  display: grid;
-  gap: 14px;
+	background: var(--panel);
+	border: 1px solid var(--border);
+	border-radius: 16px;
+	padding: 16px;
+	display: grid;
+	gap: 14px;
 }
 
 .top {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 12px;
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 12px;
 }
 
 @media (min-width: 460px) {
-  .top {
-    grid-template-columns: 180px 1fr;
-    align-items: start;
-  }
+	.top {
+		grid-template-columns: 180px 1fr;
+		align-items: start;
+	}
 }
 
 .gallows {
-  padding: 12px;
-  border-radius: 12px;
-  border: 1px solid var(--border);
-  background: var(--surface);
-  display: grid;
-  place-items: center;
-  overflow: hidden;
+	padding: 12px;
+	border-radius: 12px;
+	border: 1px solid var(--border);
+	background: var(--surface);
+	display: grid;
+	place-items: center;
+	overflow: hidden;
 }
 
 .gallowsSvg {
-  width: 100%;
-  height: auto;
-  max-width: 220px;
-  display: block;
+	width: 100%;
+	height: auto;
+	max-width: 220px;
+	display: block;
 }
 
 .standStroke {
-  fill: none;
-  stroke: rgba(231, 238, 252, 0.85);
-  stroke-width: 6;
-  stroke-linecap: round;
-  stroke-linejoin: round;
+	fill: none;
+	stroke: rgba(231, 238, 252, 0.85);
+	stroke-width: 6;
+	stroke-linecap: round;
+	stroke-linejoin: round;
 }
 
 .rope {
-  fill: none;
-  stroke: rgba(122, 162, 255, 0.9);
-  stroke-width: 5;
-  stroke-linecap: round;
+	fill: none;
+	stroke: rgba(122, 162, 255, 0.9);
+	stroke-width: 5;
+	stroke-linecap: round;
 }
 
 .personStroke {
-  fill: none;
-  stroke: rgba(255, 107, 107, 0.95);
-  stroke-width: 6;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  opacity: 0;
-  transform-origin: 160px 110px;
-  transition: opacity 180ms ease, transform 180ms ease;
+	fill: none;
+	stroke: rgba(255, 107, 107, 0.95);
+	stroke-width: 6;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+	opacity: 0;
+	transform-origin: 160px 110px;
+	transition: opacity 180ms ease, transform 180ms ease;
 }
 
 .personStroke.is-visible {
-  opacity: 1;
-  transform: translateY(0);
+	opacity: 1;
+	transform: translateY(0);
 }
 
 .meta {
-  display: grid;
-  gap: 10px;
+	display: grid;
+	gap: 10px;
 }
 
 .hint {
-  color: var(--muted);
-  font-size: 13px;
+	color: var(--muted);
+	font-size: 13px;
 }
 
 .used {
-  color: var(--muted);
-  font-size: 13px;
+	color: var(--muted);
+	font-size: 13px;
 }
 
 .word {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  align-items: center;
-  justify-content: center;
-  padding: 10px 6px;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+	align-items: center;
+	justify-content: center;
+	padding: 10px 6px;
 }
 
 .letter {
-  width: 34px;
-  height: 44px;
-  border-radius: 10px;
-  border: 1px solid var(--border);
-  background: var(--surface);
-  display: grid;
-  place-items: center;
-  font-weight: 800;
-  font-size: 18px;
+	width: 34px;
+	height: 44px;
+	border-radius: 10px;
+	border: 1px solid var(--border);
+	background: var(--surface);
+	display: grid;
+	place-items: center;
+	font-weight: 800;
+	font-size: 18px;
 }
 
 .letter.space {
-  width: 16px;
-  border: 0;
-  background: transparent;
+	width: 16px;
+	border: 0;
+	background: transparent;
 }
 
 .keyboard {
-  display: grid;
-  grid-template-columns: repeat(7, minmax(0, 1fr));
-  gap: 8px;
+	display: grid;
+	grid-template-columns: repeat(7, minmax(0, 1fr));
+	gap: 8px;
 }
 
 @media (min-width: 460px) {
-  .keyboard {
-    grid-template-columns: repeat(9, minmax(0, 1fr));
-  }
+	.keyboard {
+		grid-template-columns: repeat(9, minmax(0, 1fr));
+	}
 }
 
 .key {
-  appearance: none;
-  border: 1px solid var(--border);
-  background: transparent;
-  color: var(--text);
-  padding: 10px 0;
-  border-radius: 10px;
-  cursor: pointer;
-  font-size: 14px;
-  font-weight: 700;
+	appearance: none;
+	border: 1px solid var(--border);
+	background: transparent;
+	color: var(--text);
+	padding: 10px 0;
+	border-radius: 10px;
+	cursor: pointer;
+	font-size: 14px;
+	font-weight: 700;
 }
 
 .key:hover {
-  border-color: rgba(122, 162, 255, 0.6);
+	border-color: rgba(122, 162, 255, 0.6);
 }
 
 .key:disabled {
-  opacity: 0.55;
-  cursor: not-allowed;
+	opacity: 0.55;
+	cursor: not-allowed;
 }
 
 .helper {
-  margin: 0;
-  color: var(--muted);
-  font-size: 12px;
-  text-align: center;
-}
-
-.footer {
-  color: var(--muted);
-  text-align: center;
-  font-size: 13px;
-  margin-top: 8px;
+	margin: 0;
+	color: var(--muted);
+	font-size: 12px;
+	text-align: center;
 }

@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Memorama</title>
+    <link rel="icon" type="image/png" href="./memorama.png" />
+    <link rel="stylesheet" href="../assets/css/shared.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="header">
+        <div class="header-content">
+          <a href="../index.html" class="back-button" aria-label="Volver al menú principal">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M19 12H5M12 19l-7-7 7-7"/>
+            </svg>
+          </a>
+          <div>
+            <h1>Memorama</h1>
+            <p class="subtitle">Encontrá todos los pares</p>
+          </div>
+        </div>
+      </header>
+
+      <div class="score-bar">
+        <div class="score-block">
+          <span class="score-label">Pares</span>
+          <span class="score-value" id="pairs">0 / 8</span>
+        </div>
+        <div class="score-block">
+          <span class="score-label">Intentos</span>
+          <span class="score-value" id="moves">0</span>
+        </div>
+      </div>
+
+      <div class="grid" id="grid"></div>
+
+      <div class="controls-row">
+        <button class="btn" id="newGameBtn">Nuevo juego</button>
+      </div>
+
+      <p class="tip">Hacé click en las cartas para encontrar los pares</p>
+
+      <div id="winScreen" class="game-over hidden">
+        <div class="game-over-content">
+          <button class="go-close" id="winClose" aria-label="Cerrar">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+          </button>
+          <h2>¡Ganaste!</h2>
+          <p class="go-score">Completaste el memorama en <span id="finalMoves">0</span> intentos</p>
+          <button id="playAgainBtn" class="btn">Jugar de nuevo</button>
+        </div>
+      </div>
+       <footer class="footer">
+        <small>Hecho con HTML, CSS y JS</small>
+      </footer>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
